@@ -1,57 +1,62 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: left;
-}
-h1, h2 {
-    color: rgb(47, 151, 255);
-    text-align: center;
-}
-p {
-    line-height: 1.5;
-    text-align: left;
-    margin: 0 auto;
-    width: 80%;
-}
-ul {
-    list-style-type: square;
-    padding: 1;
-    text-align: center;
-    margin: 0 auto;
-    width: 80%;
-}
-.video-class {
-    width: 320px;
-    height: 240px;
-}
- 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* Add some CSS to center the video and images */
+.center {
     display: flex;
-}
-
-nav li {
-    margin: 0 1em;
-}
-
-nav a {
-    color: rgb(47, 151, 255);
-    text-decoration: none;
-}
-
-main {
-    padding: 2em;
-}
-
-.image-class {
-    width: 300px;
-    height: 200px;
-}
-
-footer {
-    background-color: #333;
-    color: rgb(47, 151, 255);
-    padding: 1em;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Add some CSS to style the images and videos */
+  img, video {
+    max-width: 25%;
+    margin: 10px;
+  }
+  /* Add some CSS to style the header */
+  header {
+    background-image: url('https://cdn.pixabay.com/photo/2015/11/19/08/47/banner-1050614__340.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  /* Add some CSS to style the text in the header */
+  header h1, header h2 {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
     text-align: center;
-}
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 72px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+  header h2 {
+    font-size: 36px;
+  }
+  /* Add some CSS to style the navbar */
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+  }
+  /* Add some CSS to style the footer */
+  footer {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  /* Add some CSS to style the contact information in the footer */
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  footer li {
+    margin: 10px 0;
+  }
+  footer i {
+    margin-right: 10px;
+  }
