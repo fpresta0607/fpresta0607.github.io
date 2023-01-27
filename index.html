@@ -21,16 +21,47 @@
       <p>Welcome to my professional profile. As a recent college graduate with a strong foundation in artificial intelligence and data analytics, I am eager to apply my knowledge and skills to real-world challenges. My passion for innovation and technology has led me to explore cutting-edge tools such as convolutional neural networks and natural language processing. With specialized training in physiological data collection, analysis, and visualization, as well as digital image processing and embedded instrumentation, I'm always on the lookout for new and exciting opportunities to innovate and make a real impact.    </p>
     </main>
     <footer>
-      <hr style="border: 2px solid black; width: 100%; padding: 0.5em">
-        <h3 style="color: #3a7bff;">Contact Me</h3>
-        <ul>
-          <li style="color: #3a7bff;">Email: <a href="mailto:francesco.presta@example.com" style="color: white;">francesco.presta@example.com</a></li>
-          <li style="color: black;">Phone: <a href="tel:630-674-9978" style="color: white;">630-674-9978</a></li>
-          <li style="color: black;">Linked In: <a href="https://www.linkedin.com/in/francesco-presta" style="color: white;">https://www.linkedin.com/in/francesco-presta</a></li>
-          <li style="color: black;">GitHub: <a href="https://www.github.com/fpresta0607" style="color: white;">https://www.github.com/fpresta0607</a></li>
-        </ul>
-        <p>Copyright © 2021 francesco-presta</p>
-    </footer>   
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Contact Me</h3>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-envelope"></i> <a href="mailto:francesco.presta@example.com">francesco.presta@example.com</a></li>
+              <li><i class="fas fa-phone"></i> <a href="tel:630-674-9978">630-674-9978</a></li>
+              <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/francesco-presta">https://www.linkedin.com/in/francesco-presta</a></li>
+              <li><i class="fab fa-github"></i> <a href="https://www.github.com/fpresta0607">https://www.github.com/fpresta0607</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>About</h3>
+            <p>Add some information about your website or company here.</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Follow Us</h3>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <p class="text-center">Copyright © 2021 francesco-presta</p>
+      </div>
+    </footer>
+       
     <script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>
 </html>
