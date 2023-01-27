@@ -6,6 +6,8 @@
 .image-class {
     display: flex;
     justify-content: space-between;
+    width: 25%;
+    height: auto;
 }
 .video-class {
     display: flex;
