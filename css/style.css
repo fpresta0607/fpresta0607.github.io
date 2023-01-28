@@ -1,3 +1,18 @@
+.homepage-container {
+    display: flex;
+    align-items: center;
+ }
+ 
+ .professional-summary {
+    display: flex;
+    align-items: center;
+ }
+ 
+ .headshot {
+   width: 200px; 
+   height: 200px; 
+   margin-right: 20px; 
+ } 
 .center {
     display: flex;
     align-items: center;
