@@ -27,7 +27,7 @@
 .video-class {
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
 }
 header {
     background-image: url('https://www.marquette.edu/_images/marquette-campus/banner-fall-5.jpg');
@@ -48,7 +48,9 @@ header h1 {
 header h2 {
     font-size: 36px;
 }
-
+h3{
+    text-align: center;
+}
 nav {
     display: flex;
     justify-content: space-around;
