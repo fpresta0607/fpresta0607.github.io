@@ -27,6 +27,7 @@
 .video-class {
     display: flex;
     justify-content: space-between;
+    align-items: left;
 }
 header {
     background-image: url('https://give.marquette.edu/image/BBIS-header-FY22-1.png');
