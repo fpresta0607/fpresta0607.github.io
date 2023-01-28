@@ -14,7 +14,7 @@
     justify-content: space-between;
 }
 header {
-    background-image: url('https://cdn.pixabay.com/photo/2015/11/19/08/47/banner-1050614__340.jpg');
+    background-image: url('banner.png');
     background-size: cover;
     background-position: center;
 }
@@ -63,7 +63,7 @@ footer i {
     margin-right: 10px;
 }
 #profile-picture {
-    float: right;
+    float: left;
     margin-top: 10px;
     width: 50px;
     height: 50px;
