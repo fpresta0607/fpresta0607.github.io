@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BeatBoost</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: #F1F1F1;
+		}
+		.container {
+			background-color: #FFFFFF;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px #888888;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		h1 {
+			text-align: center;
+			color: #2196F3;
+		}
+		input[type=number], select {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 100%;
+		}
+		button:hover {
+			background-color: #45a049;
+		}
+		#message {
+			margin-top: 20px;
+			text-align: center;
+			color: #2196F3;
+		}
+		@media screen and (max-width: 600px) {
+			.container {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				padding: 10px;
+				border-radius: 0;
+				box-shadow: none;
+				max-width: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>BeatBoost</h1>
+		<form id="form">
+			<label for="age">Age:</label>
+			<input type="number" id="age" name="age"><br><br>
+			<label for="genre">Genre:</label>
+			<select id="genre" name="genre">
+				<option value="rap">Rap</option>
+				<option value="edm">EDM</option>
+				<option value="country">Country</option>
+				<option value="pop">Pop</option>
+				<option value="rock">Rock</option>
+			</select><br><br>
+			<label for="target_heart_rate">Target Heart Rate:</label>
+			<input type="number" id="target_heart_rate" name="target_heart_rate"><br><br>
+			<button type="submit">Generate Song</button>
+			
+		</form>
+		<div id="message"></div>
+		<div id="spotify-player"></div>
+	</div>
+
+	<script src="https://sdk.scdn.co/spotify-player.js"></script>
+	<script>
+		window.onSpotifyWebPlaybackSDKReady = () => {
+			const player = new Spotify.Player({
+				name: 'BeatBoost',
+				getOAuthToken: cb => {
+					fetch('/token')
+						.then(response => response.json())
+						.then(data => {
+							cb(data.access_token);
+						});
+				},
+				volume: 0.5
+			});
+
+			player.connect().then(success => {
+				if (success) {
+					console.log('The Web Playback SDK successfully connected to Spotify!');
+				}
+			});
+			
+		};
+	</script>
+	<script>
+		const form = document.getElementById("form");
+		const message = document.getElementById("message");
+
+		form.addEventListener("submit", (event) => {
+			event.preventDefault();
+			const data = new FormData(form);
+			const xhr = new XMLHttpRequest();
+			xhr.open("POST", "/");
+			xhr.onload = () => {
+				if (xhr.status === 200) {
+					const response = JSON.parse(xhr.response);
+					message.innerHTML = response.message;
+				} else {
+					message.innerHTML = "An error occurred. Please try again later.";
+				}
+			};
+			xhr.send(data);
+		});
+	</script>
+</body>
+
+</html>
